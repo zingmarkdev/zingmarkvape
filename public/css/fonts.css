@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Euclid Circular A Bold';
+    src: url('../assets/fonts/euclidcircular/EuclidCircularA-Bold.eot');
+    src: local('Euclid Circular A Bold'), local('EuclidCircularA-Bold'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Bold.woff2') format('woff2'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Bold.woff') format('woff'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A Light';
+    src: url('../assets/fonts/euclidcircular/EuclidCircularA-Light.eot');
+    src: local('Euclid Circular A Light'), local('EuclidCircularA-Light'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Light.woff2') format('woff2'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Light.woff') format('woff'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A Regular';
+    src: url('../assets/fonts/euclidcircular/EuclidCircularA-Regular.eot');
+    src: local('Euclid Circular A Regular'), local('EuclidCircularA-Regular'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Regular.woff2') format('woff2'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Regular.woff') format('woff'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A SemiBold';
+    src: url('../assets/fonts/euclidcircular/EuclidCircularA-SemiBold.eot');
+    src: local('Euclid Circular A SemiBold'), local('EuclidCircularA-SemiBold'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-SemiBold.woff') format('woff'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A Medium';
+    src: url('../assets/fonts/euclidcircular/EuclidCircularA-Medium.eot');
+    src: local('Euclid Circular A Medium'), local('EuclidCircularA-Medium'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Medium.woff2') format('woff2'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Medium.woff') format('woff'),
+        url('../assets/fonts/euclidcircular/EuclidCircularA-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

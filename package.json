@@ -1,0 +1,18 @@
+{
+  "name": "zsmain",
+  "version": "0.1.2",
+  "description": "Zingmark Salt General WebApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zingmark",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "json-parser": "^3.1.2",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
+}

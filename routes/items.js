@@ -1,4 +1,4 @@
-// Zingmark Salt Node.js backend created by Zingmark
+// ZingmarkVape backend created by Zingmark 2022
 
 // Include additional libraries
 var express = require('express');

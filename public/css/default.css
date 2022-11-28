@@ -58,12 +58,6 @@ a:hover {
     color: #fff;
 }
 
-.main-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
 .content-container {
     position: relative;
     display: flex;
@@ -140,9 +134,9 @@ a:hover {
     border: 0.1rem solid #242424;
 }
 
-.items-container_cell_photo {
+.items-container_cell__photo {
     width: 97.1%;
-    height: 78%;
+    height: 82.5%;
     margin: 0.3rem;
     background-color: #181818;
     object-fit: cover;
@@ -150,7 +144,7 @@ a:hover {
     border: 0.1rem solid #242424;
 }
 
-.items-container_cell_title {
+.items-container_cell__title {
     width: 25rem;
     margin: 0.5em 0 0.5rem 1rem;
     user-select: none;
@@ -158,76 +152,17 @@ a:hover {
 
 .item-cell_title {
     text-align: center;
-    font: 16px 'Euclid Circular A Semibold';
+    font: 20px 'Euclid Circular A Semibold';
     color: #c6c6c6;
 }
 
-.items-container_details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem 2rem 1rem 2rem;
-    color: #ffffff;
-    user-select: none;
-}
-
-.item-cell_price {
-    margin-left: 1rem;
-}
-
-.item-modal_canvas {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    width: 60vw;
-    height: 40rem;
-    top: 50%;
-    left: 50%;
-    margin: -20rem 0 0 -30vw;
-    background-color: #181818;
-    border-radius: 0.5vw;
-}
-
-.item-modal_photo {
-    position: relative;
-    width: 25vw;
-    margin: 1rem;
-    background-color: #202020;
-    object-fit: cover;
-    border-radius: 0.5vw;
-    border: 0.1rem solid #282828;
-}
-
-.item-modal_main {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.item-modal_title {
-    position: relative;
-    margin: 1rem 2rem 1rem 1rem;
-    font: 36px 'Euclid Circular A Bold';
-    color: #e6e6e6;
-}
-
-.item-modal_details {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 2rem 1rem 1rem;
-}
-
-.item-modal_stock {
-    font-size: 24px;
-}
-
-.item-modal_price {
-    font-size: 24px;
-}
-
 @media screen and (min-width: 120px) and (max-width: 1080px) {
-    .side-container {
-        display: none;
+    .items-container_cell {
+        flex:0 0 95%;
+        height: 70rem;  
+        margin: 0.5rem 1rem 0.5rem 1rem;
+        background-color: #161616;
+        border-radius: 0.6vw;
+        border: 0.1rem solid #202020;
     }
 }

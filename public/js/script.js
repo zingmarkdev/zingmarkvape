@@ -1,76 +1,56 @@
-var resItems = [];
-var existItems = [];
+// script.js ZingmarkVape frontend created by Zingmark 2022
 
+// Global variables
+var resItems = [];
+var itemsElements = [];
+
+// Function of hiding all items
 function hideItems() {
     // Pass the array of items with goods and hide
-    for (var i = 0; i < existItems.length; i++) {
-        existItems[i].remove();
+    for (let i = 0; i < itemsElements.length; i++) {
+        itemsElements[i].remove();
     }
 };
 
+// Function of showing all items blocks
 function showAllItems() {
     for (let i = 0; i < resItems.length; i++) {
-        // Creating a new block in HTML markup based on the data received
-        existItems[i] = $('<div class="items-container_cell"></div>');
-        $('.items-container').append(existItems[i]);
+        // Creating a block in HTML markup based on the data received
+        itemsElements[i] = $('<div class="items-container_cell"></div>');
+        $('.items-container').append(itemsElements[i]);
 
-        let itemPhotoDiv = $('<img class="items-container_cell_photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
-        existItems[i].append(itemPhotoDiv);
+        let itemCellPhotoDiv = $('<img class="items-container_cell__photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
+        itemsElements[i].append(itemCellPhotoDiv);
 
-        let aboutDiv = $('<div class="items-container_about"></div');
-        existItems[i].append(aboutDiv);
+        let itemCellTitleDiv = $('<div class="items-container_cell__title"></div');
+        itemsElements[i].append(itemCellTitleDiv);
 
-        let itemTitleDiv = $('<div class="items-container_cell_title"></div');
-        aboutDiv.append(itemTitleDiv);
-
-        let itemTitleFormat = '<h1 class="item-cell_title">' + resItems[i].Title + '</h1>';
+        let itemTitleFormat = '<h1 class="item-cell_title">' + resItems[i].Brand + '</h1>';
         let itemTitle = $(itemTitleFormat);
-        itemTitleDiv.append(itemTitle);
-
-        let itemDetailsDiv = $('<div class="items-container_details"></div>');
-        aboutDiv.append(itemDetailsDiv);
-
-        let itemStockFormat = '<p class="item-cell_stock">' + resItems[i].Stock + ' в наличии' + '</p>';
-        let itemStock = $(itemStockFormat);
-        itemDetailsDiv.append(itemStock);
-
-        let itemPriceFormat = '<p class="item-cell_price">' + resItems[i].Price + 'р.' + '</p>';
-        let itemPrice = $(itemPriceFormat);
-        itemDetailsDiv.append(itemPrice);
+        itemCellTitleDiv.append(itemTitle);
     }
 }
 
+// Function of showing only required items
 function showRequiredItems() {
-    var inputValue = $('.search-container_field').val();
+    // Write inputfield value in var
+    let inputValue = $('.search-container_field').val();
     
-    for (var i = 0; i < resItems.length; i++) {
-        if(resItems[i].Title.toUpperCase().includes(inputValue.toUpperCase())) {
-            existItems[i] = $('<div class="items-container_cell"></div>');
-            $('.items-container').append(existItems[i]);
+    for (let i = 0; i < resItems.length; i++) {
+        if (resItems[i].Title.toUpperCase().includes(inputValue.toUpperCase())) {
+            // Creating a block in HTML markup based on the data received
+            itemsElements[i] = $('<div class="items-container_cell"></div>');
+            $('.items-container').append(itemsElements[i]);
 
-            let itemPhotoDiv = $('<img class="items-container_cell_photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
-            existItems[i].append(itemPhotoDiv);
+            let itemCellPhotoDiv = $('<img class="items-container_cell__photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
+            itemsElements[i].append(itemCellPhotoDiv);
 
-            let aboutDiv = $('<div class="items-container_about"></div');
-            existItems[i].append(aboutDiv);
+            let itemCellTitleDiv = $('<div class="items-container_cell__title"></div');
+            itemsElements[i].append(itemCellTitleDiv);
 
-            let itemTitleDiv = $('<div class="items-container_cell_title"></div');
-            aboutDiv.append(itemTitleDiv);
-
-            let itemTitleFormat = '<h1 class="item-cell_title">' + resItems[i].Title + '</h1>';
+            let itemTitleFormat = '<h1 class="item-cell_title">' + resItems[i].Brand + '</h1>';
             let itemTitle = $(itemTitleFormat);
-            itemTitleDiv.append(itemTitle);
-
-            let itemDetailsDiv = $('<div class="items-container_details"></div>');
-            aboutDiv.append(itemDetailsDiv);
-
-            let itemStockFormat = '<p class="item-cell_stock">' + resItems[i].Stock + ' в наличии' + '</p>';
-            let itemStock = $(itemStockFormat);
-            itemDetailsDiv.append(itemStock);
-
-            let itemPriceFormat = '<p class="item-cell_price">' + resItems[i].Price + 'р.' + '</p>';
-            let itemPrice = $(itemPriceFormat);
-            itemDetailsDiv.append(itemPrice);
+            itemCellTitleDiv.append(itemTitle);
         }
     }
 }

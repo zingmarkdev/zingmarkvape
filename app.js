@@ -14,22 +14,27 @@ require('./controllers');
 require('./services');
 require('./routes');
 
+// Creating an instance of the items route
 var itemsRouter = require('./routes/items');
 
+// Creating an instance of our application
 var app = express();
 
-// Server port
+// App port
 const SERVER_PORT = 8000;
 
 // Set view engine and send our page to the clients
 app.set('view engine', 'ejs');
+
 app.use(express.static(path.join(__dirname, 'views')));
+
 app.use(express.static(path.join(__dirname, '/public/')));
+
 app.get('/', (req, res) => {
-    res.render(`${__dirname}/views/index`);
+    res.render(`${__dirname}/views/index`);                 // Send our index along the root route  
 });
 
-// Use items route
+// Listening to the api route
 app.use('/api', itemsRouter);
 
 // Start server listening

@@ -2,45 +2,17 @@ var resItems = [];
 var existItems = [];
 
 function hideItems() {
-    for(var i = 0; i < existItems.length; i++) {
+    // Pass the array of items with goods and hide
+    for (var i = 0; i < existItems.length; i++) {
         existItems[i].remove();
     }
 };
 
 function showAllItems() {
     for (let i = 0; i < resItems.length; i++) {
+        // Creating a new block in HTML markup based on the data received
         existItems[i] = $('<div class="items-container_cell"></div>');
         $('.items-container').append(existItems[i]);
-        existItems[i].on('click', function() {
-            var itemModalPhoto = '<img class="item-modal_photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>';
-            $('.item-modal_canvas').append(itemModalPhoto);
-
-            let itemModalMain = '<div class="item-modal_main"></div>';
-            $('.item-modal_canvas').append(itemModalMain);
-
-            let itemModalTitle = '<h1 class="item-modal_title">' + resItems[i].Title + '</h1>';
-            $('.item-modal_main').append(itemModalTitle);
-
-            let itemModalDetails = '<div class="item-modal_details"></div>';
-            $('.item-modal_main').append(itemModalDetails);
-
-            let itemModalStock = '<p class="item-modal_stock">' + resItems[i].Stock + ' в наличии' + '</p>';
-            $('.item-modal_details').append(itemModalStock);
-
-            let itemModalPrice = '<p class="item-modal_price">' + resItems[i].Price + 'р.' + '</p>';
-            $('.item-modal_details').append(itemModalPrice);
-
-            $('.item-modal_canvas').arcticmodal({
-                afterClose: function() {
-                    $('.item-modal_photo').remove();
-                    $('.item-modal_main').remove();
-                    $('.item-modal_title').remove();
-                    $('.item-modal_details').remove();
-                    $('.item-modal_stock').remove();
-                    $('.item-modal_price').remove();
-                }
-            });
-        });
 
         let itemPhotoDiv = $('<img class="items-container_cell_photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
         existItems[i].append(itemPhotoDiv);
@@ -71,14 +43,10 @@ function showAllItems() {
 function showRequiredItems() {
     var inputValue = $('.search-container_field').val();
     
-    for (var i = 0; i < resItems.length; i++) { // Проходим по всем позициям
+    for (var i = 0; i < resItems.length; i++) {
         if(resItems[i].Title.toUpperCase().includes(inputValue.toUpperCase())) {
             existItems[i] = $('<div class="items-container_cell"></div>');
             $('.items-container').append(existItems[i]);
-            existItems[i].on('click', function() {
-                $('.item-modal_canvas').arcticmodal();
-                
-            });
 
             let itemPhotoDiv = $('<img class="items-container_cell_photo" src="assets/previews/' + resItems[i].Title + '.jpg"></img>');
             existItems[i].append(itemPhotoDiv);
@@ -107,26 +75,29 @@ function showRequiredItems() {
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function() {                                  // Check if the document is loaded
+    // Search bar response function
     $('.search-container_field').on('input', function() {
-        if($(this).length > 0) {
+        if ($(this).length > 0) {                               // If there are 1 or more characters in the string
             hideItems();
             showRequiredItems();
         }
-        if(!$(this).val()) {
+
+        if (!$(this).val()) {                                   // If the line is empty
             hideItems();
             showAllItems();
         }
     });
 
-    var req = new XMLHttpRequest();
+    // Send a request for a complete list of items
+    let req = new XMLHttpRequest();
 
-    req.open('GET', '/api/items/get', true);
-    req.onload = function() {
-        var resItemsUnparsed = this.response;
-        resItems = JSON.parse(resItemsUnparsed);
-
+    req.open('GET', '/api/items/get', true);                    // Follow the route to get a list of items
+    req.onload = function() {                                   // When receive a response from the server
+        let respondedItems= this.response;
+        resItems = JSON.parse(respondedItems);                  // Parse responded file to JSON
+        // Display the list of items on the main page
         showAllItems();
     };
-    req.send();
+    req.send();                                                 // Sending a request to the server
 });
